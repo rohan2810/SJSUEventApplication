@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterOrLogin">
+    tools:context=".LoginActivity">
+
 
     <LinearLayout
         android:layout_centerHorizontal='true'
@@ -14,6 +15,7 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
 
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -21,7 +23,7 @@
             android:ems="10"
             android:layout_gravity="center_horizontal"
             android:inputType="textPersonName"
-            android:text="User Registration" />
+            android:text="User Login" />
 
         <EditText
             android:layout_margin="15dp"
@@ -41,7 +43,7 @@
 
         <Button
             android:layout_margin="15dp"
-            android:id="@+id/buttonRegister"
+            android:id="@+id/buttonSignin"
             android:text="Register User"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -49,12 +51,11 @@
         <TextView
             android:layout_margin="15dp"
             android:textAlignment="center"
-            android:text='AlreadyRegistered? Sign-in here!'
-            android:id="@+id/textViewSignIn"
+            android:text='Not have an account? SignUp here!'
+            android:id="@+id/textViewSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
