@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         fireBaseAuth = FirebaseAuth.getInstance();
         if(fireBaseAuth.getCurrentUser()!= null){
             //start profile activity here
@@ -38,17 +37,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
         }
         progressDialog = new ProgressDialog(this);
-
         buttonSignIn = (Button) findViewById(R.id.buttonSignin);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         textViewSignUp = (TextView) findViewById(R.id.textViewSignUp);
-
         buttonSignIn.setOnClickListener(this);
         textViewSignUp.setOnClickListener(this);
     }
-
-
 
     private void userLogin() {
         String email = editTextEmail.getText().toString().trim();
@@ -68,7 +63,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //if validations are ok
         progressDialog.setMessage("Logging In....");
         progressDialog.show();
-
         fireBaseAuth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -93,9 +87,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(view == textViewSignUp){
             //will open login activity;
             startActivity(new Intent(this,RegisterOrLogin.class));
-
-
-
         }
     }
 }

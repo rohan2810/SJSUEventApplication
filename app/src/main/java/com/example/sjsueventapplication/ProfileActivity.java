@@ -20,7 +20,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
         firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser()==null){
             finish();
@@ -30,13 +29,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
         textViewUserEmail.setText("Welcome" + user.getEmail());
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
-
         buttonLogout.setOnClickListener(this);
-
-
-
     }
-
     @Override
     public void onClick(View view) {
         if(view == buttonLogout){

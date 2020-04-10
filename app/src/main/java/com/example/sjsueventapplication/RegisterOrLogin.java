@@ -39,21 +39,14 @@ public class  RegisterOrLogin extends AppCompatActivity implements View.OnClickL
             finish();
             startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
         }
-
         progressDialog = new ProgressDialog(this);
-
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-
         textViewSignin = (TextView) findViewById(R.id.textViewSignin);
-
         buttonRegister.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
-
-
     }
-
     private void registerUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -72,7 +65,6 @@ public class  RegisterOrLogin extends AppCompatActivity implements View.OnClickL
         //if validations are ok
         progressDialog.setMessage("Registering User....");
         progressDialog.show();
-
         fireBaseAuth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -90,15 +82,7 @@ public class  RegisterOrLogin extends AppCompatActivity implements View.OnClickL
                         }
                     }
                 });
-
-
-
-
-
-
-
     }
-
     @Override
     public void onClick(View view) {
         if(view == buttonRegister){
@@ -109,6 +93,4 @@ public class  RegisterOrLogin extends AppCompatActivity implements View.OnClickL
             startActivity(new Intent(this,LoginActivity.class));
         }
     }
-
-
 }
