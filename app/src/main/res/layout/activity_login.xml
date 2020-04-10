@@ -44,7 +44,7 @@
         <Button
             android:layout_margin="15dp"
             android:id="@+id/buttonSignin"
-            android:text="Register User"
+            android:text="Login User"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         fireBaseAuth = FirebaseAuth.getInstance();
         if(fireBaseAuth.getCurrentUser()!= null){
             //start profile activity here
-            finish();
+//            finish();
             startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
         }
         progressDialog = new ProgressDialog(this);
@@ -45,23 +45,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         textViewSignUp = (TextView) findViewById(R.id.textViewSignUp);
 
         buttonSignIn.setOnClickListener(this);
-        buttonSignIn.setOnClickListener(this);
+        textViewSignUp.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View view) {
-        if(view == buttonSignIn){
-            userLogin();
-        }
-        if(view == textViewSignUp){
-            //will open login activity;
-            finish();
-            startActivity(new Intent(this,RegisterOrLogin.class));
 
-
-
-        }
-    }
 
     private void userLogin() {
         String email = editTextEmail.getText().toString().trim();
@@ -89,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         progressDialog.dismiss();
                         if(task.isSuccessful()){
                             //start activity
-                            finish();
+//                            finish();
                             startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                         }
                         else{
@@ -97,5 +84,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         }
                     }
                 });
+    }
+    @Override
+    public void onClick(View view) {
+        if(view == buttonSignIn){
+            userLogin();
+        }
+        if(view == textViewSignUp){
+            //will open login activity;
+            startActivity(new Intent(this,RegisterOrLogin.class));
+
+
+
+        }
     }
 }
