@@ -88,6 +88,8 @@ public class  RegisterOrLogin extends AppCompatActivity implements View.OnClickL
         if(view == buttonRegister){
             registerUser();
         }
+        //if you click button (using button ID) then you start the class
+        //using start activity
         if(view == textViewSignin){
             //will open login activity;
             startActivity(new Intent(this,LoginActivity.class));

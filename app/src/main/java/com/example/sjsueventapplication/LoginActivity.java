@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if(task.isSuccessful()){
                             //start activity
 //                            finish();
+                            //startActivity(new Intent(this,MapPage.class));
                             startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                         }
                         else{
@@ -83,6 +84,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if(view == buttonSignIn){
             userLogin();
+
         }
         if(view == textViewSignUp){
             //will open login activity;
