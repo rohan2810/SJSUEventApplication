@@ -7,11 +7,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,9 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class  RegisterOrLogin extends AppCompatActivity implements View.OnClickListener{
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button buttonRegister;
     private EditText editTextEmail;
@@ -37,7 +34,8 @@ public class  RegisterOrLogin extends AppCompatActivity implements View.OnClickL
         if(fireBaseAuth.getCurrentUser()!= null){
             //start profile activity here
             finish();
-            startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+            //startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+            startActivity(new Intent(getApplicationContext(),MapPage.class));
         }
         progressDialog = new ProgressDialog(this);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
@@ -72,12 +70,13 @@ public class  RegisterOrLogin extends AppCompatActivity implements View.OnClickL
                         if(task.isSuccessful()){
                             //start profile activity here
                             finish();
-                            startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                            startActivity(new Intent(getApplicationContext(),MapPage.class));
+                           // startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                            // finish();
                             //Toast.makeText(RegisterOrLogin.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Toast.makeText(RegisterOrLogin.this,"Could not register, Try again",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this,"Could not register, Try again",Toast.LENGTH_SHORT).show();
 
                         }
                     }
