@@ -34,7 +34,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(fireBaseAuth.getCurrentUser()!= null){
             //start profile activity here
 //            finish();
-            startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+            startActivity(new Intent(this,MapPage.class));
+            //startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
         }
         progressDialog = new ProgressDialog(this);
         buttonSignIn = (Button) findViewById(R.id.buttonSignin);
@@ -71,8 +72,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if(task.isSuccessful()){
                             //start activity
 //                            finish();
-                            //startActivity(new Intent(this,MapPage.class));
-                            startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                            //startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                            startActivity(new Intent(getApplicationContext(),MapPage.class));
                         }
                         else{
                             Toast.makeText(LoginActivity.this,"Could not login, Try again",Toast.LENGTH_SHORT).show();
@@ -88,7 +89,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         if(view == textViewSignUp){
             //will open login activity;
-            startActivity(new Intent(this,RegisterOrLogin.class));
+            startActivity(new Intent(this, RegisterActivity.class));
         }
     }
 }
