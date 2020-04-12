@@ -18,7 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener
+{
 
     private Button buttonSignIn;
     private EditText editTextEmail;
@@ -27,11 +28,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ProgressDialog progressDialog;
     private FirebaseAuth fireBaseAuth;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         fireBaseAuth = FirebaseAuth.getInstance();
-        if(fireBaseAuth.getCurrentUser()!= null){
+        if(fireBaseAuth.getCurrentUser() != null)
+        {
             //start profile activity here
 //            finish();
             startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
@@ -45,16 +48,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         textViewSignUp.setOnClickListener(this);
     }
 
-    private void userLogin() {
+    private void userLogin()
+    {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         //checking for null
-        if(TextUtils.isEmpty(email)){
+        if(TextUtils.isEmpty(email))
+        {
             //email is empty
             Toast.makeText(this,"Please enter Email",Toast.LENGTH_SHORT).show();
             return;
         }
-        if(TextUtils.isEmpty(password)){
+        if(TextUtils.isEmpty(password))
+        {
             //password is empty
             Toast.makeText(this,"Please enter Password",Toast.LENGTH_SHORT).show();
             //stooping the function execution further
@@ -81,10 +87,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 });
     }
     @Override
-    public void onClick(View view) {
-        if(view == buttonSignIn){
+    public void onClick(View view)
+    {
+        if(view == buttonSignIn)
+        {
             userLogin();
-
         }
         if(view == textViewSignUp){
             //will open login activity;

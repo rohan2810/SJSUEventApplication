@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ItemDescription extends AppCompatActivity {
-
+public class ItemDescription extends AppCompatActivity
+{
     ImageView imageView;
     TextView textView;
 
