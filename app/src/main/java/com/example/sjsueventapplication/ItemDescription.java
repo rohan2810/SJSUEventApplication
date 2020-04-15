@@ -13,7 +13,8 @@ public class ItemDescription extends AppCompatActivity
     TextView textView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_description);
 
@@ -21,9 +22,8 @@ public class ItemDescription extends AppCompatActivity
         String description = intent.getStringExtra("description");
         String pictureURI = intent.getStringExtra("picture");
 
-        imageView=findViewById(R.id.concertEvent);
-        textView=findViewById(R.id.textViewForConcert);
-
+        imageView = findViewById(R.id.concertEvent);
+        textView = findViewById(R.id.textViewForConcert);
 
         imageView.setBackgroundResource(R.drawable.sjsueventcenter);
         textView.setText(description);

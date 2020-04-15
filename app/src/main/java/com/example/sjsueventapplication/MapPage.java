@@ -4,15 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class MapPage extends AppCompatActivity
+public class MapPage extends AppCompatActivity implements View.OnClickListener
 {
-
     Button buttonConcert;
     Button buttonBasketball;
     Button buttonBowling;
+    ImageView pictureToAssign;
+    private Button buttonLogout;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,11 +25,22 @@ public class MapPage extends AppCompatActivity
         buttonConcert = findViewById(R.id.sjsuConcert);
         buttonBasketball = findViewById(R.id.sjsuBasketball);
         buttonBowling = findViewById(R.id.bowling);
+        buttonLogout = (Button) findViewById(R.id.logoutButton);
+        buttonLogout.setOnClickListener(this);
+        firebaseAuth = FirebaseAuth.getInstance();
 
-        buttonConcert.setOnClickListener(new View.OnClickListener() {
+        if(firebaseAuth.getCurrentUser() == null)
+        {
+            finish();
+            startActivity(new Intent(this,LoginActivity.class));
+        }
+
+        buttonConcert.setOnClickListener(new View.OnClickListener()
+        {
             //this is for each button to go to the description page
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Intent goTo = new Intent(v.getContext(), ItemDescription.class);
                 goTo.putExtra("picture", R.drawable.sjsueventcenter);
                 goTo.putExtra("description", "this is the event center");
@@ -34,17 +48,21 @@ public class MapPage extends AppCompatActivity
             }
         });
 
-        buttonBowling.setOnClickListener(new View.OnClickListener() {
+        buttonBowling.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Intent goTo = new Intent(v.getContext(), ItemDescription.class);
                 //loads pictre url by left clicking and pressing copy path
-                goTo.putExtra("picture", R.drawable.sjsueventcenter);
+                goTo.putExtra("picture", R.drawable.bowling);
                 goTo.putExtra("description", "this is the bowling alley");
                 startActivity(goTo);
             }
         });
-        buttonBasketball.setOnClickListener(new View.OnClickListener() {
+
+        buttonBasketball.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 Intent goTo = new Intent(v.getContext(), ItemDescription.class);
@@ -54,8 +72,16 @@ public class MapPage extends AppCompatActivity
                 startActivity(goTo);
             }
         });
-
     }
 
-
+    @Override
+    public void onClick(View view)
+    {
+        if(view == buttonLogout)
+        {
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(this,LoginActivity.class));
+        }
+    }
 }

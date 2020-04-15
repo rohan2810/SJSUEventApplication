@@ -2,7 +2,6 @@ package com.example.sjsueventapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -20,13 +18,13 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener
 {
-
     private Button buttonSignIn;
     private EditText editTextEmail;
     private EditText editTextPassword;
     private TextView textViewSignUp;
     private ProgressDialog progressDialog;
     private FirebaseAuth fireBaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -37,7 +35,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         {
             //start profile activity here
 //            finish();
-            startActivity(new Intent(this,MapPage.class));
+            startActivity(new Intent(this, MapPage.class));
             //startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
         }
         progressDialog = new ProgressDialog(this);
@@ -67,6 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //stooping the function execution further
             return;
         }
+
         //if validations are ok
         progressDialog.setMessage("Logging In....");
         progressDialog.show();
@@ -87,6 +86,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 });
     }
+
     @Override
     public void onClick(View view)
     {
@@ -94,8 +94,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         {
             userLogin();
         }
-        if(view == textViewSignUp){
-            //will open login activity;
+        if(view == textViewSignUp)
+        {
+            //will open register activity;
             startActivity(new Intent(this, RegisterActivity.class));
         }
     }
