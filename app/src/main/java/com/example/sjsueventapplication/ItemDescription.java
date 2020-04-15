@@ -22,7 +22,7 @@ public class ItemDescription extends AppCompatActivity
         String description = intent.getStringExtra("description");
         String pictureURI = intent.getStringExtra("picture");
 
-        imageView = findViewById(R.id.concertEvent);
+        imageView = findViewById(R.id.itemDescriptionImage);
         textView = findViewById(R.id.textViewForConcert);
 
         imageView.setBackgroundResource(R.drawable.sjsueventcenter);
