@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/concertEvent"
+        android:id="@+id/itemDescriptionImage"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,5 +23,5 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/concertEvent" />
+        app:layout_constraintTop_toBottomOf="@+id/itemDescriptionImage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

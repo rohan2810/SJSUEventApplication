@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ItemDescription extends AppCompatActivity {
 
-    ImageView imageView;
+    ImageView itemDescriptionImage;
     TextView textView;
 
     @Override
@@ -21,11 +21,13 @@ public class ItemDescription extends AppCompatActivity {
         String description = intent.getStringExtra("description");
         String pictureURI = intent.getStringExtra("picture");
 
-        imageView=findViewById(R.id.concertEvent);
+        ImageView view = MapPage.picturesForEvents;
+
+        itemDescriptionImage=findViewById(R.id.itemDescriptionImage);
         textView=findViewById(R.id.textViewForConcert);
 
 
-        imageView.setBackgroundResource(R.drawable.sjsueventcenter);
+        //itemDescriptionImage.setBackgroundResource(R.drawable.);
         textView.setText(description);
     }
 }
