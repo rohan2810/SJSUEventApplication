@@ -35,7 +35,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
             startActivity(new Intent(this,LoginActivity.class));
         }
 
-        buttonConcert.setOnClickListener(new View.OnClickListener()
+         buttonConcert.setOnClickListener(new View.OnClickListener()
         {
             //this is for each button to go to the description page
             @Override
