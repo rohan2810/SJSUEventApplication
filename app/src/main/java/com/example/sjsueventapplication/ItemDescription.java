@@ -7,13 +7,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ItemDescription extends AppCompatActivity {
-
-    ImageView itemDescriptionImage;
+public class ItemDescription extends AppCompatActivity
+{
+    ImageView imageView;
     TextView textView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_description);
 
@@ -21,13 +22,10 @@ public class ItemDescription extends AppCompatActivity {
         String description = intent.getStringExtra("description");
         String pictureURI = intent.getStringExtra("picture");
 
-        ImageView view = MapPage.picturesForEvents;
+        imageView = findViewById(R.id.concertEvent);
+        textView = findViewById(R.id.textViewForConcert);
 
-        itemDescriptionImage=findViewById(R.id.itemDescriptionImage);
-        textView=findViewById(R.id.textViewForConcert);
-
-
-        //itemDescriptionImage.setBackgroundResource(R.drawable.);
+        imageView.setBackgroundResource(R.drawable.sjsueventcenter);
         textView.setText(description);
     }
 }
