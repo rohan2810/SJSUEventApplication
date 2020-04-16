@@ -20,7 +20,6 @@ public class ItemDescription extends AppCompatActivity
 
         Intent intent = getIntent();
         String description = intent.getStringExtra("description");
-        String pictureURI = intent.getStringExtra("picture");
 
         //from the description page
         imageView = findViewById(R.id.itemDescriptionImage);

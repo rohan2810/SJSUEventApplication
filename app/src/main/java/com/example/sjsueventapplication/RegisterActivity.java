@@ -31,19 +31,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fireBaseAuth = FirebaseAuth.getInstance();
-        if(fireBaseAuth.getCurrentUser() != null)
+        if (fireBaseAuth.getCurrentUser() != null)
         {
             //start profile activity here
             finish();
             //startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-            startActivity(new Intent(getApplicationContext(),MapPage.class));
+            startActivity(new Intent(getApplicationContext(), MapPage.class));
         }
 
         progressDialog = new ProgressDialog(this);
-        buttonRegister = (Button) findViewById(R.id.buttonRegister);
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        textViewSignin = (TextView) findViewById(R.id.textViewSignin);
+        buttonRegister = (Button)findViewById(R.id.buttonRegister);
+        editTextEmail = (EditText)findViewById(R.id.editTextEmail);
+        editTextPassword = (EditText)findViewById(R.id.editTextPassword);
+        textViewSignin = (TextView)findViewById(R.id.textViewSignin);
         buttonRegister.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
     }
@@ -53,40 +53,40 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
-        if(TextUtils.isEmpty(email))
+        if (TextUtils.isEmpty(email))
         {
             //email is empty
-            Toast.makeText(this,"Please enter Email",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Please enter Email", Toast.LENGTH_LONG).show();
             return;
         }
-        if(TextUtils.isEmpty(password))
+        if (TextUtils.isEmpty(password))
         {
             //password is empty
-            Toast.makeText(this,"Please enter Password",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Please enter Password", Toast.LENGTH_LONG).show();
            //stooping the function execution further
             return;
         }
         //if validations are ok
         progressDialog.setMessage("Registering User....");
         progressDialog.show();
-        fireBaseAuth.createUserWithEmailAndPassword(email,password)
+        fireBaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>()
                 {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task)
                     {
-                        if(task.isSuccessful())
+                        if (task.isSuccessful())
                         {
                             //start profile activity here
                             finish();
-                            startActivity(new Intent(getApplicationContext(),MapPage.class));
+                            startActivity(new Intent(getApplicationContext(), MapPage.class));
                            // startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                            // finish();
                             //Toast.makeText(RegisterOrLogin.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
-                            Toast.makeText(RegisterActivity.this,"Could not register, Try again",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this,"Could not register, Try again",Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -95,16 +95,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view)
     {
-        if(view == buttonRegister)
+        if (view == buttonRegister)
         {
             registerUser();
         }
         //if you click button (using button ID) then you start the class
         //using start activity
-        if(view == textViewSignin)
+        if (view == textViewSignin)
         {
             //will open login activity;
-            startActivity(new Intent(this,LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
         }
     }
 }

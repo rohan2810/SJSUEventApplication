@@ -22,26 +22,26 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_profile);
         firebaseAuth = FirebaseAuth.getInstance();
 
-        if(firebaseAuth.getCurrentUser() == null)
+        if (firebaseAuth.getCurrentUser() == null)
         {
             finish();
-            startActivity(new Intent(this,LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
         }
         FirebaseUser user  = firebaseAuth.getCurrentUser();
-        textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
+        textViewUserEmail = (TextView)findViewById(R.id.textViewUserEmail);
         textViewUserEmail.setText("Welcome" + user.getEmail());
-        buttonLogout = (Button) findViewById(R.id.buttonLogout);
+        buttonLogout = (Button)findViewById(R.id.buttonLogout);
         buttonLogout.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view)
     {
-        if(view == buttonLogout)
+        if (view == buttonLogout)
         {
             firebaseAuth.signOut();
             finish();
-            startActivity(new Intent(this,LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
         }
     }
 }

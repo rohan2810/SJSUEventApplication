@@ -4,20 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MapPage extends AppCompatActivity implements View.OnClickListener
 {
-    Button buttonConcert;
-    Button buttonBasketball;
-    Button buttonBowling;
-    Button buttonBBQ;
-    Button buttonVolleyball;
-
-
-    ImageView pictureToAssign;
+    private Button buttonConcert;
+    private Button buttonBasketball;
+    private Button buttonBowling;
+    private Button buttonBBQ;
+    private Button buttonVolleyball;
+    private Button buttonFilter;
     private Button buttonLogout;
     private FirebaseAuth firebaseAuth;
     static int picture;
@@ -43,8 +40,11 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         buttonVolleyball = findViewById(R.id.buttonVolleyball);
         buttonVolleyball.setOnClickListener(this);
 
-        buttonLogout = (Button) findViewById(R.id.logoutButton);
+        buttonLogout = findViewById(R.id.logoutButton);
         buttonLogout.setOnClickListener(this);
+
+        buttonFilter = findViewById(R.id.buttonFilter);
+        buttonFilter.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
 
         images = new int[5];
@@ -54,7 +54,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         images[3] = R.drawable.pool;
         images[4] = R.drawable.volleyball;
 
-        if(firebaseAuth.getCurrentUser() == null)
+        if (firebaseAuth.getCurrentUser() == null)
         {
             finish();
             startActivity(new Intent(this,LoginActivity.class));
@@ -102,14 +102,13 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View view)
     {
-        if(view == buttonLogout)
+        if (view == buttonLogout)
         {
             firebaseAuth.signOut();
             finish();
             startActivity(new Intent(this,LoginActivity.class));
         }
-
-        if(view == buttonBowling)
+        if (view == buttonBowling)
         {
             picture = 0;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
@@ -119,8 +118,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
                     " free SJSU bowling shirts!");
             startActivity(goTo);
         }
-
-        if(view == buttonConcert)
+        if (view == buttonConcert)
         {
             picture = 1;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
@@ -130,8 +128,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
                     "free ticket is October 28th. See you there!");
             startActivity(goTo);
         }
-
-        if(view == buttonBasketball)
+        if (view == buttonBasketball)
         {
             picture = 2;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
@@ -140,8 +137,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
                     " and enjoy free pizza and churros! Spartan Up!");
             startActivity(goTo);
         }
-
-        if(view == buttonBBQ)
+        if (view == buttonBBQ)
         {
             picture = 3;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
@@ -150,8 +146,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
                     "12PM to 3PM by the pool.");
             startActivity(goTo);
         }
-
-        if(view == buttonVolleyball)
+        if (view == buttonVolleyball)
         {
             picture = 4;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
@@ -159,6 +154,11 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
                     "first game of the season against UC Santa Cruz Friday September 17th at 6PM. " +
                     "We will be handing out free shirts and wristbands to the first 100 students" +
                     " who come cheer on our volleyball team. Spartan Up!");
+            startActivity(goTo);
+        }
+        if (view == buttonFilter)
+        {
+            Intent goTo = new Intent(view.getContext(), EventList.class);
             startActivity(goTo);
         }
     }
