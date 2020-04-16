@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/sjsuConcert"
+        android:id="@+id/buttonConcert"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="44dp"
@@ -24,39 +24,51 @@
         />
 
     <Button
-        android:id="@+id/bowling"
+        android:id="@+id/buttonBowling"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
         android:layout_marginTop="112dp"
         android:background="@android:color/holo_blue_light"
         android:text="Bowling"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
-        android:id="@+id/sjsuBasketball"
+        android:id="@+id/buttonBasketball"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="180dp"
         android:background="@android:color/holo_green_dark"
         android:text="Basketball"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/event4"
+        android:id="@+id/buttonBBQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="132dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="BBQ"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonVolleyball"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="300dp"
-        android:background="@android:color/holo_green_dark"
-        android:text="qwergty"
+        android:layout_marginTop="404dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="VOLLEYBALL"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

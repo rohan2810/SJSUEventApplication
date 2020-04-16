@@ -13,6 +13,10 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
     Button buttonConcert;
     Button buttonBasketball;
     Button buttonBowling;
+    Button buttonBBQ;
+    Button buttonVolleyball;
+
+
     ImageView pictureToAssign;
     private Button buttonLogout;
     private FirebaseAuth firebaseAuth;
@@ -24,19 +28,32 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_map);
-        buttonConcert = findViewById(R.id.sjsuConcert);
+        buttonConcert = findViewById(R.id.buttonConcert);
         buttonConcert.setOnClickListener(this);
-        buttonBasketball = findViewById(R.id.sjsuBasketball);
+
+        buttonBasketball = findViewById(R.id.buttonBasketball);
         buttonBasketball.setOnClickListener(this);
-        buttonBowling = findViewById(R.id.bowling);
+
+        buttonBowling = findViewById(R.id.buttonBowling);
         buttonBowling.setOnClickListener(this);
+
+        buttonBBQ = findViewById(R.id.buttonBBQ);
+        buttonBBQ.setOnClickListener(this);
+
+        buttonVolleyball = findViewById(R.id.buttonVolleyball);
+        buttonVolleyball.setOnClickListener(this);
+
         buttonLogout = (Button) findViewById(R.id.logoutButton);
         buttonLogout.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
 
-        images = new int[2];
+        images = new int[4];
         images[0] = R.drawable.bowling;
         images[1] = R.drawable.sjsueventcenter;
+
+        //images[2] = R.drawable.;
+        //images[3] = R.drawable;
+        //images[4] = R.drawable;
 
         if(firebaseAuth.getCurrentUser() == null)
         {
@@ -97,7 +114,10 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         {
             picture = 0;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
-            goTo.putExtra("description", "this is the bowling alley");
+            goTo.putExtra("description", "Hey Spartans! We are having a Bowling " +
+                    "Tournament in the Student Union on September 25th at 7pm. Come to the Student " +
+                    "Union to RSVP your team for $5 a person. The winning team will recieve" +
+                    " free SJSU bowling shirts!");
             startActivity(goTo);
         }
 
@@ -106,6 +126,31 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
             picture = 1;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
             goTo.putExtra("description", "this is the event center");
+            startActivity(goTo);
+        }
+
+        if(view == buttonBasketball)
+        {
+            picture = 1;
+            Intent goTo = new Intent(view.getContext(), ItemDescription.class);
+            goTo.putExtra("description", "this is for the basketball game");
+            startActivity(goTo);
+        }
+
+        if(view == buttonBBQ)
+        {
+            picture = 1;
+            Intent goTo = new Intent(view.getContext(), ItemDescription.class);
+            goTo.putExtra("description", "Come and enjoy a BBQ with your fellow " +
+                    "Spartans at the new SRAC!");
+            startActivity(goTo);
+        }
+
+        if(view == buttonVolleyball)
+        {
+            picture = 1;
+            Intent goTo = new Intent(view.getContext(), ItemDescription.class);
+            goTo.putExtra("description", "this is for the basketball game");
             startActivity(goTo);
         }
     }
