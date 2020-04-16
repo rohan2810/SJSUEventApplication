@@ -114,7 +114,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
             picture = 0;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
             goTo.putExtra("description", "Hey Spartans! We are having a Bowling " +
-                    "Tournament in the Student Union on September 25th at 7pm. Come to the Student " +
+                    "Tournament in the Student Union on September 25th at 7PM. Come to the Student " +
                     "Union to RSVP your team for $5 a person. The winning team will recieve" +
                     " free SJSU bowling shirts!");
             startActivity(goTo);
@@ -124,7 +124,10 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         {
             picture = 1;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
-            goTo.putExtra("description", "this is the event center");
+            goTo.putExtra("description", "San Jose State is hosting a free concert for" +
+                    " all students on October 30th at 9PM. Tickets will be distributed at the Event Center" +
+                    " ticket booth to students with a valid student ID. The deadline to get your " +
+                    "free ticket is October 28th. See you there!");
             startActivity(goTo);
         }
 
@@ -132,7 +135,9 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         {
             picture = 2;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
-            goTo.putExtra("description", "this is for the basketball game");
+            goTo.putExtra("description", "The Spartan Basketball team is having a " +
+                    "game against Berkeley Saturday September 10th at 7PM. Come support our players" +
+                    " and enjoy free pizza and churros! Spartan Up!");
             startActivity(goTo);
         }
 
@@ -141,7 +146,8 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
             picture = 3;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
             goTo.putExtra("description", "Come and enjoy a BBQ with your fellow " +
-                    "Spartans at the new SRAC!");
+                    "Spartans at the new SRAC! We will be cooking free hotdogs and hamburgers from " +
+                    "12PM to 3PM by the pool.");
             startActivity(goTo);
         }
 
@@ -149,7 +155,10 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         {
             picture = 4;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
-            goTo.putExtra("description", "this is for the basketball game");
+            goTo.putExtra("description", "The Women's Volleyball team is having their " +
+                    "first game of the season against UC Santa Cruz Friday September 17th at 6PM. " +
+                    "We will be handing out free shirts and wristbands to the first 100 students" +
+                    " who come cheer on our volleyball team. Spartan Up!");
             startActivity(goTo);
         }
     }
