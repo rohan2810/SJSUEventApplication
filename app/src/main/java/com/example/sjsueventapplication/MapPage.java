@@ -47,13 +47,12 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         buttonLogout.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
 
-        images = new int[4];
+        images = new int[5];
         images[0] = R.drawable.bowling;
-        images[1] = R.drawable.sjsueventcenter;
-
-        //images[2] = R.drawable.;
-        //images[3] = R.drawable;
-        //images[4] = R.drawable;
+        images[1] = R.drawable.concert;
+        images[2] = R.drawable.sjsueventcenter;
+        images[3] = R.drawable.pool;
+        images[4] = R.drawable.volleyball;
 
         if(firebaseAuth.getCurrentUser() == null)
         {
@@ -131,7 +130,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
 
         if(view == buttonBasketball)
         {
-            picture = 1;
+            picture = 2;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
             goTo.putExtra("description", "this is for the basketball game");
             startActivity(goTo);
@@ -139,7 +138,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
 
         if(view == buttonBBQ)
         {
-            picture = 1;
+            picture = 3;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
             goTo.putExtra("description", "Come and enjoy a BBQ with your fellow " +
                     "Spartans at the new SRAC!");
@@ -148,7 +147,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
 
         if(view == buttonVolleyball)
         {
-            picture = 1;
+            picture = 4;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
             goTo.putExtra("description", "this is for the basketball game");
             startActivity(goTo);
