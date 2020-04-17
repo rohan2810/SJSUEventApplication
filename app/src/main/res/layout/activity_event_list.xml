@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventList">
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="410dp"
+        android:layout_height="487dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button14">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="410dp"
+            android:layout_height="487dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonBowling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="80dp"
+                android:text="Bowling" />
+
+            <Button
+                android:id="@+id/concertButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="80dp"
+                android:text="Concert" />
+
+            <Button
+                android:id="@+id/bbqButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="80dp"
+                android:text="BBQ" />
+
+            <Button
+                android:id="@+id/basketballButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="80dp"
+                android:text="Basketball" />
+
+            <Button
+                android:id="@+id/volleyballButton"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="Volleyball" />
+
+            <Button
+                android:id="@+id/engButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="80dp"
+                android:text="Engineering Workshop" />
+
+            <Button
+                android:id="@+id/jobButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="80dp"
+                android:text="Job Fair" />
+
+            <Button
+                android:id="@+id/InternButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="80dp"
+                android:text="Internship Workshop" />
+
+            <Button
+                android:id="@+id/clubButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="80dp"
+                android:text="Club Rushing" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="195dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="2dp"
+        android:text="Map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/logoutButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="195dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
+        android:text="Log out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mapButton"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="1dp"
+        android:text="Free Food"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toStartOf="@+id/button13"
+        app:layout_constraintStart_toEndOf="@+id/button14"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="155dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="1dp"
+        android:text="Upcoming Events"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button12"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="155dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="1dp"
+        android:text="Today"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toStartOf="@+id/button12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
