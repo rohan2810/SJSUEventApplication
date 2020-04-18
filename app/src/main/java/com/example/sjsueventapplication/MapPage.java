@@ -16,6 +16,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
     private Button buttonVolleyball;
     private Button buttonFilter;
     private Button buttonLogout;
+    private Button addEvents;
     private FirebaseAuth firebaseAuth;
     static int picture;
     static int[] images;
@@ -25,6 +26,8 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_map);
+        addEvents = findViewById(R.id.addEvents);
+        addEvents.setOnClickListener(this);
         buttonConcert = findViewById(R.id.buttonConcert);
         buttonConcert.setOnClickListener(this);
 
@@ -159,6 +162,10 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         if (view == buttonFilter)
         {
             Intent goTo = new Intent(view.getContext(), EventList.class);
+            startActivity(goTo);
+        }
+        if(view == addEvents){
+            Intent goTo = new Intent(view.getContext(), DatabaseActivity.class);
             startActivity(goTo);
         }
     }

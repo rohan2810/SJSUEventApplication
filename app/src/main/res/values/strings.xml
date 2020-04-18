@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">SJSU Event Application</string>
+
+    <array name="Category">
+        <item>Bowling</item>
+        <item>Concert</item>
+        <item>BBQ</item>
+        <item>Basketball</item>
+        <item>Volleyball</item>
+    </array>
+    <array name="Location">
+        <item>Bowling</item>
+        <item>Concert</item>
+        <item>BBQ</item>
+        <item>Basketball</item>
+        <item>Volleyball</item>
+    </array>
+
 </resources>
