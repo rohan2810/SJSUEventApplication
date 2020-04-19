@@ -2,18 +2,28 @@
     <string name="app_name">SJSU Event Application</string>
 
     <array name="Category">
-        <item>Bowling</item>
+        <item>Choose a Category:</item>
+        <item>Career Fair</item>
         <item>Concert</item>
-        <item>BBQ</item>
-        <item>Basketball</item>
-        <item>Volleyball</item>
+        <item>Food</item>
+        <item>Movie</item>
+        <item>Recreation</item>
+        <item>Sports</item>
+        <item>Studying</item>
+        <item>Other</item>
     </array>
     <array name="Location">
-        <item>Bowling</item>
-        <item>Concert</item>
-        <item>BBQ</item>
-        <item>Basketball</item>
-        <item>Volleyball</item>
+        <item>Choose a Location:</item>
+        <item>Campus Village Quad</item>
+        <item>Event Center</item>
+        <item>MLK Library</item>
+        <item>Seventh Street Plaza</item>
+        <item>Spartan Complex</item>
+        <item>Spartan Recreation Center</item>
+        <item>Student Union</item>
+        <item>Tower Lawn</item>
+        <item>Yoshihiro Uchida Hall</item>
+        <item>Off Campus</item>
     </array>
 
 </resources>

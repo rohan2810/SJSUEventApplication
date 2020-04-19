@@ -126,7 +126,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
             picture = 1;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
             goTo.putExtra("description", "San Jose State is hosting a free concert for" +
-                    " all students on October 30th at 9PM. Tickets will be distributed at the Event Center" +
+                    " all students on October 30th, at 9PM. Tickets will be distributed at the Event Center" +
                     " ticket booth to students with a valid student ID. The deadline to get your " +
                     "free ticket is October 28th. See you there!");
             startActivity(goTo);
@@ -136,7 +136,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
             picture = 2;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
             goTo.putExtra("description", "The Spartan Basketball team is having a " +
-                    "game against Berkeley Saturday September 10th at 7PM. Come support our players" +
+                    "game against UC Berkeley Saturday September 10th, at 7PM. Come support our players" +
                     " and enjoy free pizza and churros! Spartan Up!");
             startActivity(goTo);
         }
@@ -154,7 +154,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
             picture = 4;
             Intent goTo = new Intent(view.getContext(), ItemDescription.class);
             goTo.putExtra("description", "The Women's Volleyball team is having their " +
-                    "first game of the season against UC Santa Cruz Friday September 17th at 6PM. " +
+                    "first game of the season against UC Santa Cruz Friday September 17th, at 6PM. " +
                     "We will be handing out free shirts and wristbands to the first 100 students" +
                     " who come cheer on our volleyball team. Spartan Up!");
             startActivity(goTo);
