@@ -85,10 +85,10 @@
 
     <Button
         android:id="@+id/logoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="97dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
         android:text="Logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,8 +98,8 @@
         android:id="@+id/buttonFilter"
         android:layout_width="250dp"
         android:layout_height="48dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
         android:text="FILTERS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,14 +110,25 @@
 
     <Button
         android:id="@+id/addEvents"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_width="187dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="60dp"
         android:text="Add Event"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonVolleyball"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/listEvents"
+        android:layout_width="168dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="20dp"
+        android:text="ShowEvents"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addEvents"
         app:layout_constraintTop_toBottomOf="@+id/buttonVolleyball" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

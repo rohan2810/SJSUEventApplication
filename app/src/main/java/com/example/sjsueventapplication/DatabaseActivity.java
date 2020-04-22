@@ -1,23 +1,37 @@
 package com.example.sjsueventapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseActivity extends AppCompatActivity implements View.OnClickListener{
     private FirebaseDatabase mFirebaseDatabase;
 //    private DatabaseReference databaseCategory;
 //    private DatabaseReference databaseLocation;
     private DatabaseReference databaseEvents;
+
+//    ListView listViewEvents;
+//    List<Event> eventList;
+
     EditText info;
     EditText name;
     Button button;
@@ -29,7 +43,6 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
-        System.out.print("Here0");
 
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -45,14 +58,36 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
         spinnerCategory = (Spinner) findViewById(R.id.Category);
         spinnerLocation = (Spinner) findViewById(R.id.Location);
 
-//        buttonAdd.setOnClickListener(new View.OnClickListener() {
+//        listViewEvents = (ListView) findViewById(R.id.listViewDisplay);  //check this one
+//        eventList = new ArrayList<>();
+    }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        databaseEvents.addValueEventListener(new ValueEventListener() {
 //            @Override
-//            public void onClick(View v) {
-//                System.out.print("Here");
-//                addinfo();
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                eventList.clear();
+//
+//                for (DataSnapshot eventSnapshot : dataSnapshot.getChildren()){
+//                    Event event = eventSnapshot.getValue(Event.class);
+//                    eventList.add(event);
+//                }
+//
+//                EventListing adapter = new EventListing(DatabaseActivity.this,eventList);
+//                listViewEvents.setAdapter(adapter);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
 //            }
 //        });
-    }
+//    }
+
     private void addinfo(){
         System.out.print("Here1");
         String information = info.getText().toString().trim();
