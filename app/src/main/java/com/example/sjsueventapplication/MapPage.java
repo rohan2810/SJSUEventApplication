@@ -63,46 +63,8 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         if (firebaseAuth.getCurrentUser() == null)
         {
             finish();
-            startActivity(new Intent(this,LoginActivity.class));
+            startActivity(new Intent(this, RegisterOrLogin.class));
         }
-
-       /*  buttonConcert.setOnClickListener(new View.OnClickListener()
-        {
-            //this is for each button to go to the description page
-            @Override
-            public void onClick(View v)
-            {
-                Intent goTo = new Intent(v.getContext(), ItemDescription.class);
-               // goTo.putExtra("picture", R.drawable.sjsueventcenter);
-                goTo.putExtra("description", "this is the event center");
-                startActivity(goTo);
-            }
-        });
-
-        buttonBowling.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent goTo = new Intent(v.getContext(), ItemDescription.class);
-                //loads pictre url by left clicking and pressing copy path
-                //goTo.putExtra("picture", R.drawable.bowling);
-                goTo.putExtra("description", "this is the bowling alley");
-                startActivity(goTo);
-            }
-        });
-
-        buttonBasketball.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Intent goTo = new Intent(v.getContext(), ItemDescription.class);
-                //loads pictre url by left clicking and pressing copy path
-               // goTo.putExtra("picture", R.drawable.sjsueventcenter);
-                goTo.putExtra("description", "this is the basketball game");
-                startActivity(goTo);
-            }
-        });*/
     }
 
     @Override
@@ -112,7 +74,7 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
         {
             firebaseAuth.signOut();
             finish();
-            startActivity(new Intent(this,LoginActivity.class));
+            startActivity(new Intent(this, RegisterOrLogin.class));
         }
         if (view == buttonBowling)
         {
@@ -167,11 +129,13 @@ public class MapPage extends AppCompatActivity implements View.OnClickListener
             Intent goTo = new Intent(view.getContext(), EventList.class);
             startActivity(goTo);
         }
-        if(view == addEvents){
+        if(view == addEvents)
+        {
             Intent goTo = new Intent(view.getContext(), DatabaseActivity.class);
             startActivity(goTo);
         }
-        if(view == listEvents){
+        if(view == listEvents)
+        {
             Intent goTo = new Intent(view.getContext(), ListEvent.class);
             startActivity(goTo);
         }

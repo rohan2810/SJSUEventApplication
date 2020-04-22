@@ -2,7 +2,6 @@ package com.example.sjsueventapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.renderscript.Sampler;
 import android.text.TextUtils;
@@ -13,13 +12,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +43,7 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
 
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-       databaseEvents = mFirebaseDatabase.getReference("Event");
+        databaseEvents = mFirebaseDatabase.getReference("Event");
         name = (EditText) findViewById(R.id.name);
         info = (EditText) findViewById(R.id.info);
         button = findViewById(R.id.button);
@@ -84,7 +81,8 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
 //        });
 //    }
 
-    private void addinfo(){
+    private void addinfo()
+    {
         System.out.print("Here1");
         String information = info.getText().toString().trim();
         String eventName  = name.getText().toString().trim();
@@ -108,8 +106,10 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        if(view == button){
-        System.out.print("Here");
-               addinfo();}
+        if(view == button)
+        {
+            System.out.print("Here");
+            addinfo();
+        }
     }
 }

@@ -1,17 +1,22 @@
 package com.example.sjsueventapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class EventList extends AppCompatActivity implements View.OnClickListener
 {
     private Button bowlingButton;
     private Button mapButton;
     private Button concertButton;
+    private Button logoutButton;
+    private Spinner spinner;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,6 +29,16 @@ public class EventList extends AppCompatActivity implements View.OnClickListener
         mapButton.setOnClickListener(this);
         concertButton = (Button)findViewById(R.id.concertButton);
         concertButton.setOnClickListener(this);
+        logoutButton = (Button)findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(this);
+        spinner = (Spinner)findViewById(R.id.spinner);
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        if (firebaseAuth.getCurrentUser() == null)
+        {
+            finish();
+            startActivity(new Intent(this, RegisterOrLogin.class));
+        }
     }
 
     @Override
@@ -53,6 +68,12 @@ public class EventList extends AppCompatActivity implements View.OnClickListener
         {
             Intent goTo = new Intent(view.getContext(), MapPage.class);
             startActivity(goTo);
+        }
+        if (view == logoutButton)
+        {
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(this, RegisterOrLogin.class));
         }
     }
 }

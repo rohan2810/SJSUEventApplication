@@ -10,12 +10,10 @@
         android:id="@+id/scrollView3"
         android:layout_width="410dp"
         android:layout_height="487dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button14">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -84,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:height="80dp"
                 android:text="Club Rushing" />
+
         </LinearLayout>
     </ScrollView>
 
@@ -91,8 +90,6 @@
         android:id="@+id/mapButton"
         android:layout_width="195dp"
         android:layout_height="52dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="18dp"
         android:layout_marginBottom="2dp"
         android:text="Map"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -104,51 +101,23 @@
         android:id="@+id/logoutButton"
         android:layout_width="195dp"
         android:layout_height="52dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="3dp"
-        android:text="Log out"
+        android:layout_marginBottom="2dp"
+        android:text="log out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mapButton"
         app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
 
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="100dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="1dp"
-        android:text="Free Food"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toStartOf="@+id/button13"
-        app:layout_constraintStart_toEndOf="@+id/button14"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="155dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="1dp"
-        android:text="Upcoming Events"
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="380dp"
+        android:layout_height="31dp"
+        android:entries="@array/Category"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button12"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="155dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="1dp"
-        android:text="Today"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
