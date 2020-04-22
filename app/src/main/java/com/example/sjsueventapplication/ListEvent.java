@@ -43,10 +43,6 @@ public class ListEvent extends AppCompatActivity{
                 for (DataSnapshot eventSnapshot : dataSnapshot.getChildren()) {
                     event = eventSnapshot.getValue(Event.class);
                     eventList.add(event.getEventName().toString());
-                    eventList.add(event.getId().toString());
-                    eventList.add(event.getCategory().toString());
-                    eventList.add(event.getInformation().toString());
-                    eventList.add(event.getLocation().toString());
 
                 }
                 listViewDisplay.setAdapter(adapter);

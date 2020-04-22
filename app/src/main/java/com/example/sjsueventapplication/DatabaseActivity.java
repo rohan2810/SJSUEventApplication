@@ -47,10 +47,6 @@ public class DatabaseActivity extends AppCompatActivity implements View.OnClickL
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
        databaseEvents = mFirebaseDatabase.getReference("Event");
-       // databaseCategory = FirebaseDatabase.getInstance().getReference("Event");
-        //databaseEvents = FirebaseDatabase.getInstance().getReference("Event");
-        //databaseLocation = FirebaseDatabase.getInstance().getReference("location");
-        //databaseCategory = mFirebaseDatabase.getReference().child("messages");
         name = (EditText) findViewById(R.id.name);
         info = (EditText) findViewById(R.id.info);
         button = findViewById(R.id.button);
