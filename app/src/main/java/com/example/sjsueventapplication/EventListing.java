@@ -8,13 +8,15 @@
 //import android.widget.TextView;
 //
 //import androidx.annotation.NonNull;
+//
+//import java.util.ArrayList;
 //import java.util.List;
 //
 //public class EventListing extends ArrayAdapter<Event> {
 //    private Activity context;
-//    private List<Event> events;
+//    private ArrayList<String> events;
 //
-//    public EventListing(Activity context, List<Event> events) {
+//    public EventListing(Activity context, ArrayList<String> events) {
 //        super(context,R.layout.list_layout,events);
 //        this.context = context;
 //        this.events = events;

@@ -35,14 +35,19 @@ public class ListEvent extends AppCompatActivity{
         databaseEvents = mFirebaseDatabase.getReference().child("Event");
         listViewDisplay = (ListView) findViewById(R.id.listViewDisplay);
         eventList = new ArrayList<>();
-        adapter = new ArrayAdapter<String>(this,R.layout.list_layout,R.id.viewName,eventList);
+        adapter = new ArrayAdapter<>(this,R.layout.list_layout,R.id.viewName,eventList);
 
         databaseEvents.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot eventSnapshot : dataSnapshot.getChildren()) {
                     event = eventSnapshot.getValue(Event.class);
-                    eventList.add(event.getEventName().toString()+ "  " + event.getCategory());
+                    eventList.add(event.getEventName().toString());
+                    eventList.add(event.getId().toString());
+                    eventList.add(event.getCategory().toString());
+                    eventList.add(event.getInformation().toString());
+                    eventList.add(event.getLocation().toString());
+
                 }
                 listViewDisplay.setAdapter(adapter);
 //                EventListing adapter = new EventListing(ListEvent.this,eventList);
