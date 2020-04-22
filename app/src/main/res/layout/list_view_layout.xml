@@ -8,11 +8,13 @@
 
     <ListView
         android:id="@+id/listViewDisplay"
-        android:layout_width="409dp"
-        android:layout_height="601dp"
+        android:layout_width="407dp"
+        android:layout_height="597dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ListView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"></ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>
